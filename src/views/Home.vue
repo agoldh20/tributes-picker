@@ -13,7 +13,7 @@
             <div v-for="member in team.members">
               <tr>
                 <td>
-                  <input type="checkbox" checked v-bind:id="member" v-bind:value="member" v-model="team.currentList">
+                  <input type="checkbox" v-bind:id="member" v-bind:value="member" v-model="team.currentList">
                   <label v-bind:for="member">{{ member }}</label>
                 </td>
               </tr>
@@ -65,7 +65,8 @@ export default {
   created: () => {},
   methods: {
     picker: () => {
-      console.log(this.masterList);
+      var list = this.masterList;
+      console.log(list);
       // this.masterList.forEach(member => {
       //   const randNum = Math.floor(Math.random() * member.currentList.length);
       //   this.tributes.push(member.currentList[randNum]);
