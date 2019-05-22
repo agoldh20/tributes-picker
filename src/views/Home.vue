@@ -66,6 +66,7 @@ export default {
   created: () => {},
   methods: {
     picker: function() {
+      this.tributes = [];
       this.masterList.forEach(member => {
         const randNum = Math.floor(Math.random() * member.currentList.length);
         this.tributes.push(member.currentList[randNum]);
