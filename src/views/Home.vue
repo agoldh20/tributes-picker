@@ -18,13 +18,14 @@
                 </td>
               </tr>
             </div>
-            <div>Checked names: {{ team.currentList }}</div>
           </tbody>
         </table>
       </div>
     </div>
     <button v-on:click="picker()">Pick The Tributes</button>
-    <p>{{ tributes }}</p>
+    <ul>
+       <li v-for="tribute in tributes">{{ tribute }}</li>
+    </ul>
   </div>
 </template>
 
@@ -64,12 +65,11 @@ export default {
   },
   created: () => {},
   methods: {
-    picker: () => {
-      console.log(this.masterList);
-      // this.masterList.forEach(member => {
-      //   const randNum = Math.floor(Math.random() * member.currentList.length);
-      //   this.tributes.push(member.currentList[randNum]);
-      // });
+    picker: function() {
+      this.masterList.forEach(member => {
+        const randNum = Math.floor(Math.random() * member.currentList.length);
+        this.tributes.push(member.currentList[randNum]);
+      });
     }
   }
 };
