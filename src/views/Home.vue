@@ -65,8 +65,7 @@ export default {
   created: () => {},
   methods: {
     picker: () => {
-      var list = this.masterList;
-      console.log(list);
+      console.log(this.masterList);
       // this.masterList.forEach(member => {
       //   const randNum = Math.floor(Math.random() * member.currentList.length);
       //   this.tributes.push(member.currentList[randNum]);
