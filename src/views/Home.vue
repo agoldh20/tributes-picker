@@ -14,7 +14,7 @@
               <tr>
                 <td>
                   <input type="checkbox" v-bind:id="member" v-bind:value="member" v-model="team.currentList">
-                  <label v-bind:for="member">{{ member }}</label>
+                  <label v-bind:for="member">&nbsp;{{ member }}</label>
                 </td>
               </tr>
             </div>
