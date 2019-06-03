@@ -24,7 +24,7 @@
     </div>
     <button v-on:click="picker()">Pick The Tributes</button>
     <ul>
-       <li v-for="tribute in tributes">{{ tribute }}</li>
+       <li v-for="tribute in tributes">{{ tribute["team"] }}: {{ tribute["person"] }}</li>
     </ul>
   </div>
 </template>
@@ -68,8 +68,11 @@ export default {
     picker: function() {
       this.tributes = [];
       this.masterList.forEach(member => {
+        let pick = {};
         const randNum = Math.floor(Math.random() * member.currentList.length);
-        this.tributes.push(member.currentList[randNum]);
+        pick["team"] = member.name;
+        pick["person"] = member.currentList[randNum];
+        this.tributes.push(pick);
       });
     }
   }
