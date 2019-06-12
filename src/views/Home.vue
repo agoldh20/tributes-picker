@@ -2,11 +2,11 @@
   <div class="home container">
     <h1>Welcome to the Tributes Picker</h1>
     <div class="row">
-      <div class="col" v-for="team in masterList">
+      <div class="col" v-for="(team, index) in masterList">
         <table class="table">
           <thead>
             <tr>
-              <th>{{ team.name }}</th>
+              <th>{{ team.name }} <span class="link" v-on:click="clearAll(index)">Deselect All</span></th>
             </tr>
           </thead>
           <tbody>
@@ -28,6 +28,13 @@
     </ul>
   </div>
 </template>
+<style>
+  .link {
+    color: blue;
+    text-decoration: underline;
+    font-size: small;
+  }
+</style>
 
 <script>
 export default {
@@ -36,8 +43,8 @@ export default {
       masterList: [
         {
           name: "PO",
-          members: ["Allie", "Colleen", "Jess","Marie", "Ryan"],
-          currentList: ["Allie", "Colleen", "Jess","Marie", "Ryan"]
+          members: ["Allie", "Colleen", "Jess", "Marie", "Ryan"],
+          currentList: ["Allie", "Colleen", "Jess", "Marie", "Ryan"]
         },
         {
           name: "Magic Scrum Bus",
@@ -79,6 +86,9 @@ export default {
         pick["person"] = member.currentList[randNum];
         this.tributes.push(pick);
       });
+    },
+    clearAll: function(teamIndex) {
+      this.masterList[teamIndex].currentList = [];
     }
   }
 };
