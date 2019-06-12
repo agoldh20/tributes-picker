@@ -31,8 +31,12 @@
 <style>
   .link {
     color: blue;
-    text-decoration: underline;
     font-size: small;
+  }
+
+  .link:hover {
+    text-decoration: underline;
+    cursor: pointer;
   }
 </style>
 
