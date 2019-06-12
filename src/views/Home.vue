@@ -6,7 +6,11 @@
         <table class="table">
           <thead>
             <tr>
-              <th>{{ team.name }} <span class="link" v-on:click="clearAll(index)">Deselect All</span></th>
+              <th>{{ team.name }} 
+                <span class="small-text">Select: </span>
+                <span class="link" v-on:click="selectAll(index)">All</span> /
+                <span class="link" v-on:click="clearAll(index)">Clear</span>
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -29,6 +33,10 @@
   </div>
 </template>
 <style>
+  .small-text {
+    font-size: small;
+  }
+
   .link {
     color: blue;
     font-size: small;
@@ -93,6 +101,9 @@ export default {
     },
     clearAll: function(teamIndex) {
       this.masterList[teamIndex].currentList = [];
+    },
+    selectAll: function(teamIndex) {
+      this.masterList[teamIndex].currentList = this.masterList[teamIndex].members;
     }
   }
 };
