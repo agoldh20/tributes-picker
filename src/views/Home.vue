@@ -35,29 +35,34 @@ export default {
     return {
       masterList: [
         {
+          name: "PO",
+          members: ["Allie", "Colleen", "Jess","Marie", "Ryan"],
+          currentList: ["Allie", "Colleen", "Jess","Marie", "Ryan"]
+        },
+        {
           name: "Magic Scrum Bus",
-          members: ["Mike", "Anthony", "Adam", "Jennifer"],
-          currentList: ["Mike", "Anthony", "Adam", "Jennifer"]
+          members: ["Adam", "Anthony", "Jennifer", "Mike"],
+          currentList: ["Adam", "Anthony", "Jennifer", "Mike"]
         },
         {
           name: "Lumber Jax",
-          members: ["Matt", "Chris", "Rich", "Bill"],
-          currentList: ["Matt", "Chris", "Rich", "Bill"]
+          members: ["Bill", "Chris", "Matt", "Hayes"],
+          currentList: ["Bill", "Chris", "Matt", "Hayes"]
         },
         {
           name: "Mighty Morphins",
-          members: ["Intesar", "Evan", "Ramiro", "Joe", "Neha"],
-          currentList: ["Intesar", "Evan", "Ramiro", "Joe", "Neha"]
+          members: ["Evan", "Intesar", "Joe", "Neha", "Ramiro"],
+          currentList: ["Evan", "Intesar", "Joe", "Neha", "Ramiro"]
         },
         {
           name: "4Scrumpany",
-          members: ["Troy", "Navya", "Farha"],
-          currentList: ["Troy", "Navya", "Farha"]
+          members: ["Farha", "Navya", "Troy"],
+          currentList: ["Farha", "Navya", "Troy"]
         },
         {
           name: "Peace And Chill",
-          members: ["Azat", "Barbora", "Ildar", "Patrik", "Nour", "Stepan"],
-          currentList: ["Azat", "Barbora", "Ildar", "Patrik", "Nour", "Stepan"]
+          members: ["Azat", "Barbora", "Ildar", "Nour", "Patrik", "Stepan"],
+          currentList: ["Azat", "Barbora", "Ildar", "Nour", "Patrik", "Stepan"]
         }
       ],
       tributes: []
