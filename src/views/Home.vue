@@ -46,7 +46,7 @@ export default {
     return {
       masterList: [
         {
-          name: "PO",
+          name: "Prduct Owner",
           members: ["Allie", "Colleen", "Jess", "Marie", "Ryan"],
           currentList: ["Allie", "Colleen", "Jess", "Marie", "Ryan"]
         },
