@@ -33,19 +33,19 @@
   </div>
 </template>
 <style>
-  .small-text {
-    font-size: small;
-  }
+.small-text {
+  font-size: small;
+}
 
-  .link {
-    color: blue;
-    font-size: small;
-  }
+.link {
+  color: blue;
+  font-size: small;
+}
 
-  .link:hover {
-    text-decoration: underline;
-    cursor: pointer;
-  }
+.link:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
 </style>
 
 <script>
@@ -54,7 +54,7 @@ export default {
     return {
       masterList: [
         {
-          name: "Prduct Owner",
+          name: "Product Owner",
           members: ["Allie", "Colleen", "Jess", "Marie", "Ryan"],
           currentList: ["Allie", "Colleen", "Jess", "Marie", "Ryan"]
         },
