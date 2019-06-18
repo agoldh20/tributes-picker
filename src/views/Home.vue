@@ -65,8 +65,8 @@ export default {
         },
         {
           name: "Lumber Jax",
-          members: ["Bill", "Chris", "Matt", "Hayes"],
-          currentList: ["Bill", "Chris", "Matt", "Hayes"]
+          members: ["Bill", "Chris", "Matt", "Rich"],
+          currentList: ["Bill", "Chris", "Matt", "Rich"]
         },
         {
           name: "Mighty Morphins",
