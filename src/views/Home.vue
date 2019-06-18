@@ -6,7 +6,7 @@
         <table class="table">
           <thead>
             <tr>
-              <th>{{ team.name }} 
+              <th>{{ team.name }} <br />
                 <span class="small-text">Select: </span>
                 <span class="link" v-on:click="selectAll(index)">All</span> /
                 <span class="link" v-on:click="clearAll(index)">Clear</span>
@@ -53,11 +53,11 @@ export default {
   data: () => {
     return {
       masterList: [
-        {
-          name: "Product Owner",
-          members: ["Allie", "Colleen", "Jess", "Marie", "Ryan"],
-          currentList: ["Allie", "Colleen", "Jess", "Marie", "Ryan"]
-        },
+        // {
+        //   name: "Product Owner",
+        //   members: ["Allie", "Colleen", "Jess", "Marie", "Ryan"],
+        //   currentList: ["Allie", "Colleen", "Jess", "Marie", "Ryan"]
+        // },
         {
           name: "Magic Scrum Bus",
           members: ["Adam", "Anthony", "Jennifer", "Mike"],
