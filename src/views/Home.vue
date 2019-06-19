@@ -27,7 +27,7 @@
       </div>
     </div>
     <button v-on:click="picker()">Pick The Tributes</button>
-    <ul>
+    <ul style="padding-top: 10px;">
        <li v-for="tribute in tributes">{{ tribute["team"] }}: {{ tribute["person"] }}</li>
     </ul>
   </div>
