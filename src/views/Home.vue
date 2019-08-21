@@ -6,8 +6,8 @@
         <table class="table">
           <thead>
             <tr>
-              <th>{{ team.name }} <br />
-                <span class="small-text">Select: </span>
+              <th>{{ team.name }} <br>
+                <span class="small-text">Select: </span><!-- <br> -->
                 <span class="link" v-on:click="selectAll(index)">All</span> /
                 <span class="link" v-on:click="clearAll(index)">Clear</span>
               </th>
@@ -65,8 +65,8 @@ export default {
         },
         {
           name: "Lumber Jax",
-          members: ["Bill", "Chris", "Matt", "Rich"],
-          currentList: ["Bill", "Chris", "Matt", "Rich"]
+          members: ["Bill", "Matt", "Rich"],
+          currentList: ["Bill", "Matt", "Rich"]
         },
         {
           name: "Mighty Morphins",
@@ -82,7 +82,17 @@ export default {
           name: "Peace And Chill",
           members: ["Azat", "Barbora", "Ildar", "Nour", "Patrik", "Stepan"],
           currentList: ["Azat", "Barbora", "Ildar", "Nour", "Patrik", "Stepan"]
-        }
+        },
+        // {
+        //   name: "Pin Pals",
+        //   members: ["Daniel C.", "John", "Lenox"],
+        //   currentList: ["Daniel C.", "John", "Lenox"]
+        // },
+        // {
+        //   name: "The Be Sharps",
+        //   members: ["Daniel O.", "Juan", "Kelwin"],
+        //   currentList: ["Daniel O.", "Juan", "Kelwin"]
+        // }
       ],
       tributes: []
     };
@@ -90,7 +100,7 @@ export default {
   created: () => {},
   methods: {
     picker: function() {
-      this.tributes = [];
+      this.tributes = [{"team": "Forever Tributes", "person": "Stephen, Russ, Chris"}];
       this.masterList.forEach(member => {
         let pick = {};
         const randNum = Math.floor(Math.random() * member.currentList.length);
