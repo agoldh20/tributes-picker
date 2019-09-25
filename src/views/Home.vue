@@ -65,8 +65,8 @@ export default {
         },
         {
           name: "Lumber Jax",
-          members: ["Bill", "Matt", "Rich"],
-          currentList: ["Bill", "Matt", "Rich"]
+          members: ["Bill", "Matt", "Rich", "Stepan"],
+          currentList: ["Bill", "Matt", "Rich", "Stepan"]
         },
         {
           name: "Mighty Morphins",
@@ -80,8 +80,8 @@ export default {
         },
         {
           name: "Peace And Chill",
-          members: ["Azat", "Barbora", "Ildar", "Nour", "Patrik", "Stepan"],
-          currentList: ["Azat", "Barbora", "Ildar", "Nour", "Patrik", "Stepan"]
+          members: ["Azat", "Barbora", "Ildar", "Nour", "Patrik"],
+          currentList: ["Azat", "Barbora", "Ildar", "Nour", "Patrik"]
         },
         // {
         //   name: "Pin Pals",
