@@ -7,7 +7,7 @@
           <thead>
             <tr>
               <th>{{ team.name }} <br>
-                <span class="small-text">Select: </span><!-- <br> -->
+                <span class="small-text">Select: </span><br>
                 <span class="link" v-on:click="selectAll(index)">All</span> /
                 <span class="link" v-on:click="clearAll(index)">Clear</span>
               </th>
@@ -32,6 +32,7 @@
     </ul>
   </div>
 </template>
+
 <style>
 .small-text {
   font-size: small;
@@ -46,6 +47,11 @@
   text-decoration: underline;
   cursor: pointer;
 }
+
+.col {
+  padding-left: 5px;
+  padding-right: 5px;
+}
 </style>
 
 <script>
@@ -53,11 +59,6 @@ export default {
   data: () => {
     return {
       masterList: [
-        // {
-        //   name: "Product Owner",
-        //   members: ["Allie", "Colleen", "Jess", "Marie", "Ryan"],
-        //   currentList: ["Allie", "Colleen", "Jess", "Marie", "Ryan"]
-        // },
         {
           name: "Magic Scrum Bus",
           members: ["Adam", "Anthony", "Jennifer", "Mike"],
@@ -83,16 +84,26 @@ export default {
           members: ["Azat", "Barbora", "Ildar", "Nour", "Patrik"],
           currentList: ["Azat", "Barbora", "Ildar", "Nour", "Patrik"]
         },
-        // {
-        //   name: "Pin Pals",
-        //   members: ["Daniel C.", "John", "Lenox"],
-        //   currentList: ["Daniel C.", "John", "Lenox"]
-        // },
-        // {
-        //   name: "The Be Sharps",
-        //   members: ["Daniel O.", "Juan", "Kelwin"],
-        //   currentList: ["Daniel O.", "Juan", "Kelwin"]
-        // }
+        {
+          name: "Pin Pals",
+          members: ["Daniel C.", "Heney", "John", "Lenox"],
+          currentList: ["Daniel C.", "Heney", "John", "Lenox"]
+        },
+        {
+          name: "The Be Sharps",
+          members: ["Daniel O.", "Diego", "Santiago N.", "Kelwin"],
+          currentList: ["Daniel O.", "Diego", "Santiago N.", "Kelwin"]
+        },
+        {
+          name: "Codevengers",
+          members: ["Carlos", "Daniel M.", "Harry", "Santiago C."],
+          currentList: ["Carlos", "Daniel M.", "Harry", "Santiago C."]
+        },
+        {
+          name: "X-Force",
+          members: ["Anthony", "Nicolas", "Katherina", "Juan"],
+          currentList: ["Anthony", "Nicolas", "Katherina", "Juan"]
+        }
       ],
       tributes: []
     };
@@ -100,14 +111,22 @@ export default {
   created: () => {},
   methods: {
     picker: function() {
-      this.tributes = [{"team": "Forever Tributes", "person": "Stephen, Russ, Chris"}];
+      const tempTribs = [];
+
       this.masterList.forEach(member => {
         let pick = {};
         const randNum = Math.floor(Math.random() * member.currentList.length);
         pick["team"] = member.name;
         pick["person"] = member.currentList[randNum];
-        this.tributes.push(pick);
+        tempTribs.push(pick);
       });
+
+      while (tempTribs.length > 5) {
+        tempTribs.splice(Math.floor(Math.random() * tempTribs.length), 1);
+      }
+
+      this.tributes = tempTribs;
+      this.tributes.unshift({"team": "Forever Tributes", "person": "Stephen, Russ, Chris"});
     },
     clearAll: function(teamIndex) {
       this.masterList[teamIndex].currentList = [];
