@@ -113,12 +113,14 @@ export default {
     picker: function() {
       const tempTribs = [];
 
-      this.masterList.forEach(member => {
-        let pick = {};
-        const randNum = Math.floor(Math.random() * member.currentList.length);
-        pick["team"] = member.name;
-        pick["person"] = member.currentList[randNum];
-        tempTribs.push(pick);
+      this.masterList.forEach(team => {
+        if (team.currentList.length > 0) {
+          let pick = {};
+          const randNum = Math.floor(Math.random() * team.currentList.length);
+          pick["team"] = team.name;
+          pick["person"] = team.currentList[randNum];
+          tempTribs.push(pick);
+        }
       });
 
       while (tempTribs.length > 5) {
