@@ -1,9 +1,9 @@
 <template>
-  <div class="home container">
-    <h1>Welcome to the Tributes Picker</h1>
-    <div class="row">
-      <div class="col" v-for="(team, index) in masterList">
-        <table class="table">
+  <div class="home container-fluid">
+    <table class="table">
+    <h1>Welcome to the Tributes Picker</h1><br>
+      <div class="row">
+        <span class="col" v-for="(team, index) in masterList">
           <thead>
             <tr>
               <th>{{ team.name }} <br>
@@ -23,13 +23,19 @@
               </tr>
             </div>
           </tbody>
-        </table>
+        </span>
       </div>
-    </div>
-    <button v-on:click="picker()">Pick The Tributes</button>
-    <ul style="padding-top: 10px;">
-       <li v-for="tribute in tributes">{{ tribute["team"] }}: {{ tribute["person"] }}</li>
-    </ul>
+      <div class="shiftRight">
+        <div class="row">
+          <button v-on:click="picker()">Pick The Tributes</button>
+        </div>
+        <div class="row tribResults">
+          <ul style="padding-top: 10px;">
+             <li v-for="tribute in tributes">{{ tribute["team"] }}: {{ tribute["person"] }}</li>
+          </ul>
+        </div>
+      </div>
+    </table>
   </div>
 </template>
 
@@ -48,9 +54,16 @@
   cursor: pointer;
 }
 
-.col {
-  padding-left: 5px;
-  padding-right: 5px;
+.table {
+  text-align: center;
+}
+
+.tribResults {
+  text-align: left;
+}
+
+.shiftRight {
+  padding-left: 20px;
 }
 </style>
 
