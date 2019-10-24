@@ -1,5 +1,17 @@
 <template>
   <div class="home container-fluid">
+    <!-- The Modal -->
+    <div class="modal fade" id="myModal">
+      <div class="modal-dialog">
+        <div class="modal-content">  
+          <!-- Modal body -->
+          <div class="modal-body">
+            <iframe src="https://giphy.com/embed/FP56vNcwOVyvu" width="480" height="371" frameBorder="0" class="giphy-embed" allowFullScreen>
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
     <table class="table">
     <h1>Welcome to the Tributes Picker</h1><br>
       <div class="row">
@@ -27,7 +39,7 @@
       </div>
       <div class="shiftRight">
         <div class="row">
-          <button v-on:click="picker()">Pick The Tributes</button>
+          <button v-on:click="modalClose()" data-toggle="modal" data-target="#myModal">Pick The Tributes</button>
         </div>
         <div class="row tribResults">
           <ul style="padding-top: 10px;">
@@ -123,6 +135,10 @@ export default {
   },
   created: () => {},
   methods: {
+    modalClose: function() {
+      setTimeout(() => $('#myModal').modal('hide'), 3000);
+      setTimeout(() => this.picker(), 3250);
+    },
     picker: function() {
       const tempTribs = [];
 
