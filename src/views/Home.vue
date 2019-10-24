@@ -1,31 +1,29 @@
 <template>
   <div class="home container">
     <h1>Welcome to the Tributes Picker</h1>
-    <div class="row">
-      <div class="col" v-for="(team, index) in masterList">
-        <table class="table">
-          <thead>
+    <table class="table">
+      <span class="col-sm-1" v-for="(team, index) in masterList">
+        <thead>
+          <tr>
+            <th>{{ team.name }} <br>
+              <span class="small-text">Select: </span><br>
+              <span class="link" v-on:click="selectAll(index)">All</span> /
+              <span class="link" v-on:click="clearAll(index)">Clear</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <div v-for="member in team.members">
             <tr>
-              <th>{{ team.name }} <br>
-                <span class="small-text">Select: </span><br>
-                <span class="link" v-on:click="selectAll(index)">All</span> /
-                <span class="link" v-on:click="clearAll(index)">Clear</span>
-              </th>
+              <td>
+                <input type="checkbox" v-bind:id="member" v-bind:value="member" v-model="team.currentList">
+                <label v-bind:for="member">&nbsp;{{ member }}</label>
+              </td>
             </tr>
-          </thead>
-          <tbody>
-            <div v-for="member in team.members">
-              <tr>
-                <td>
-                  <input type="checkbox" v-bind:id="member" v-bind:value="member" v-model="team.currentList">
-                  <label v-bind:for="member">&nbsp;{{ member }}</label>
-                </td>
-              </tr>
-            </div>
-          </tbody>
-        </table>
-      </div>
-    </div>
+          </div>
+        </tbody>
+      </span>
+    </table>
     <button v-on:click="picker()">Pick The Tributes</button>
     <ul style="padding-top: 10px;">
        <li v-for="tribute in tributes">{{ tribute["team"] }}: {{ tribute["person"] }}</li>
@@ -51,6 +49,10 @@
 .col {
   padding-left: 5px;
   padding-right: 5px;
+}
+
+.table {
+  width: auto;
 }
 </style>
 
