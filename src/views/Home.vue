@@ -1,33 +1,41 @@
 <template>
-  <div class="home container">
-    <h1>Welcome to the Tributes Picker</h1>
+  <div class="home container-fluid">
     <table class="table">
-      <span class="col-sm-1" v-for="(team, index) in masterList">
-        <thead>
-          <tr>
-            <th>{{ team.name }} <br>
-              <span class="small-text">Select: </span><br>
-              <span class="link" v-on:click="selectAll(index)">All</span> /
-              <span class="link" v-on:click="clearAll(index)">Clear</span>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <div v-for="member in team.members">
+    <h1>Welcome to the Tributes Picker</h1><br>
+      <div class="row">
+        <span class="col" v-for="(team, index) in masterList">
+          <thead>
             <tr>
-              <td>
-                <input type="checkbox" v-bind:id="member" v-bind:value="member" v-model="team.currentList">
-                <label v-bind:for="member">&nbsp;{{ member }}</label>
-              </td>
+              <th>{{ team.name }} <br>
+                <span class="small-text">Select: </span><br>
+                <span class="link" v-on:click="selectAll(index)">All</span> /
+                <span class="link" v-on:click="clearAll(index)">Clear</span>
+              </th>
             </tr>
-          </div>
-        </tbody>
-      </span>
+          </thead>
+          <tbody>
+            <div v-for="member in team.members">
+              <tr>
+                <td>
+                  <input type="checkbox" v-bind:id="member" v-bind:value="member" v-model="team.currentList">
+                  <label v-bind:for="member">&nbsp;{{ member }}</label>
+                </td>
+              </tr>
+            </div>
+          </tbody>
+        </span>
+      </div>
+      <div class="shiftRight">
+        <div class="row">
+          <button v-on:click="picker()">Pick The Tributes</button>
+        </div>
+        <div class="row tribResults">
+          <ul style="padding-top: 10px;">
+             <li v-for="tribute in tributes">{{ tribute["team"] }}: {{ tribute["person"] }}</li>
+          </ul>
+        </div>
+      </div>
     </table>
-    <button v-on:click="picker()">Pick The Tributes</button>
-    <ul style="padding-top: 10px;">
-       <li v-for="tribute in tributes">{{ tribute["team"] }}: {{ tribute["person"] }}</li>
-    </ul>
   </div>
 </template>
 
@@ -46,13 +54,16 @@
   cursor: pointer;
 }
 
-.col {
-  padding-left: 5px;
-  padding-right: 5px;
+.table {
+  text-align: center;
 }
 
-.table {
-  width: auto;
+.tribResults {
+  text-align: left;
+}
+
+.shiftRight {
+  padding-left: 20px;
 }
 </style>
 
